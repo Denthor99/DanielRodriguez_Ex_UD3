@@ -9,9 +9,16 @@ import javax.swing.WindowConstants;
  * and open the template in the editor.
  */
 
+/**
+ * Clase de nombre Apuesta con visibilidad publica, que hereda de javax.swing.JFrame
+ * @author Daniel Alfonso Rodríguez Santos
+ * @version 1.1
+ */
 public class Apuesta extends javax.swing.JFrame {
 
-   
+   /**
+    * Metodo constructor sin parametros
+    */
     public Apuesta() 
     {
         initComponents();
@@ -120,7 +127,10 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo de tipo sin retorno (void)
+     * @param evt 
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -140,12 +150,20 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+   /**
+    * Metodo que, mediante los parametros añadidos por el usuario, nos genera un numero aleatorio
+    * @param n1
+    * @param n2
+    * @return 
+    */
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
-    
+    /**
+     * Metodo de tipo sin retorno (void). Ese metodo nos genera el resultado que veremos por pantalla en la quiniela
+     * @param evt 
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +190,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * Metodo de tipo sin retorno (void) que nos genera un partido nuevo
+     * @param partido 
+     */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +207,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+    /**
+     * Metodo de tipo sin retorno (void) que nos borra un partido segun un parametro de tipo entero
+     * @param indice 
+     */
     public void borraPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -212,7 +236,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-   
+   /**
+    * Metodo Main de la Clase Apuesta
+    * @param args 
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
