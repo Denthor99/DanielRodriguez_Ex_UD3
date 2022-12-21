@@ -1,21 +1,33 @@
 
 import java.awt.event.KeyEvent;
 
+/**
+ * Clase de nombre CrearPartido con visibilidad publica, que hereda de javax.swing.JFrame
+ * @author Daniel Alfonso Rodriguez Santos
+ * @version 1.1
+ */
 
 
 public class CrearPartido extends javax.swing.JFrame
 {
    
-    
+    /**
+     * Composición de la clase Apuesta, con nombre v.
+     */
     private Apuesta v;
     
-   
+   /**
+    * Metodo constructor sin parametros
+    */
     public CrearPartido() 
     {
         initComponents();
     }
 
-   
+   /**
+    * Metodo constructor donde se añade un parametro de tipo objeto (composicion). Se le asigna el valor del campo v a ventana.
+    * @param ventana 
+    */
     public CrearPartido(Apuesta ventana) 
     {
         initComponents();
@@ -74,30 +86,47 @@ public class CrearPartido extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo de tipo sin retorno (void) que nos permite introducir como parametro un tipo de dato Cadena de caracteres
+     * @param p 
+     */
     public void añadePartido(String p)
     {
         v.partidoNuevo(p);
         tPartido.setText("");
         tPartido.requestFocus();
     }
-    
+    /**
+     * Metodo de tipo sin retorno (void), que nos permite introducir un parametro
+     * @param evt 
+     */
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
 
+    /**
+     * Metodo de tipo sin retorno (void) donde se introduce un parametro. Si se cumple la condición especificada se ejecutaria la instucción.
+     * @param evt 
+     */
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {
             añadePartido(tPartido.getText());
         }
     }//GEN-LAST:event_tPartidoKeyPressed
-
+    /**
+     * Metodo de tipo sin retorno (void) donde se le debe pasar un parametro
+     * @param evt 
+     */
     private void tPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tPartidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tPartidoActionPerformed
 
-    
+    /**
+     * Metodo Main de la clase CrearPartido
+     * @param args 
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
